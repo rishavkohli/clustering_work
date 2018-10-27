@@ -296,17 +296,13 @@ for(i in 1:length(test.data[,1]))
 { sum_c1<-0
   sum_c2<-0
   sum_c3<-0
-#sum_c4<-0
-#sum_c5<-0
-#sum_c6<-0
+
   for(j in 1:length(head))
   {
     diff_c1<-test.data[i,head[j]]-cl$centers[1,head[j]]
     diff_c2<-test.data[i,head[j]]-cl$centers[2,head[j]]
     diff_c3<-test.data[i,head[j]]-cl$centers[3,head[j]]
- #  diff_c4<-test.data[i,head[j]]-cl$centers[4,head[j]]
-  # diff_c5<-test.data[i,head[j]]-cl$centers[5,head[j]]
-   #diff_c6<-test.data[i,head[j]]-cl$centers[6,head[j]]
+ 
     if(diff_c1<0)
       { diff_c1=0-diff_c1
       }
@@ -319,22 +315,12 @@ for(i in 1:length(test.data[,1]))
       {diff_c3=0-diff_c3
       }
     
-#   if(diff_c4<0)
-#   {diff_c4=0-diff_c4}
-   
-#   if(diff_c5<0)
-#   {diff_c5=0-diff_c5}
-    
- #  if(diff_c6<0)
-#   {diff_c6=0-diff_c6}
-   
+
    
     sum_c1=sum_c1+diff_c1
     sum_c2=sum_c2+diff_c2
     sum_c3=sum_c3+diff_c3
-#    sum_c4=sum_c4+diff_c4
- #   sum_c5=sum_c5+diff_c5
-  #  sum_c6=sum_c6+diff_c6
+
     
   }
      if(sum_c1==min(sum_c1,sum_c2,sum_c3))
@@ -346,14 +332,7 @@ for(i in 1:length(test.data[,1]))
      if(sum_c3==min(sum_c1,sum_c2,sum_c3))
       { test.data[i,"clust"]=3
       }
-#if(sum_c4==min(sum_c1,sum_c2,sum_c3,sum_c4,sum_c5,sum_c6))
-#{ test.data[i,"clust"]=4}
 
-#if(sum_c5==min(sum_c1,sum_c2,sum_c3,sum_c4,sum_c5,sum_c6))
-#{ test.data[i,"clust"]=5}
-
-#if(sum_c6==min(sum_c1,sum_c2,sum_c3,sum_c4,sum_c5,sum_c6))
-#{ test.data[i,"clust"]=6}
 
 }
 
